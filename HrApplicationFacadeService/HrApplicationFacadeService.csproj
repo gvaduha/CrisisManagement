@@ -81,6 +81,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="c:\users\andryuschenko_v\documents\visual studio 2012\Projects\CrisMgmt\DbFacade\DbFacade.csproj">
+      <Project>{c7c0d486-cae3-4cca-aadc-ef2c8e7fb915}</Project>
+      <Name>DbFacade</Name>
+    </ProjectReference>
     <ProjectReference Include="c:\users\andryuschenko_v\documents\visual studio 2012\Projects\CrisMgmt\DomainObjects\DomainObjects.fsproj">
       <Project>{c3453715-7588-49b4-bdab-3d67c59fe3dc}</Project>
       <Name>DomainObjects</Name>

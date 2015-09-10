@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using VA.CrisisManagement.Domain;
+using VA.CrisisManagement.DbFacade;
 
 namespace VA.CrisisManagement.HrApplicationFacade
 {

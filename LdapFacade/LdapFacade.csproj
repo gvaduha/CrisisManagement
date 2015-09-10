@@ -7,7 +7,7 @@
     <ProjectGuid>{4DDA26A5-7DCB-405C-8A59-548354015B8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LdapFacade</RootNamespace>
+    <RootNamespace>VA.CrisisManagement.LdapFacade</RootNamespace>
     <AssemblyName>LdapFacade</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

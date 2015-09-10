@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using VA.CrisisManagement.Domain;
+using VA.CrisisManagement.DbFacade;
 
 namespace Infrastructure
 {
@@ -21,9 +22,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-
-            //var x = global::Domain.Objects.xxx;
-
+            // Domain objects
             var p = new DomainObjects.Person();
 
             var e = new DomainObjects.Employee();
@@ -33,14 +32,17 @@ namespace ConsoleApplication1
             Console.WriteLine(f.Members.First().birthDate.ToShortDateString());
 
 
-
-            var x = new VA.CrisisManagement.HrApplicationFacade.CompoundFilter<VA.CrisisManagement.HrApplicationFacade.EmployeeFindFilter>()
+            // HR App facade
+            var x = new VA.CrisisManagement.DbFacade.CompoundFilter<VA.CrisisManagement.HrApplicationFacade.EmployeeFindFilter>()
             {
                 one = new VA.CrisisManagement.HrApplicationFacade.EmployeeFindFilter(),
                 two = new VA.CrisisManagement.HrApplicationFacade.EmployeeFindFilter(),
-                comb = VA.CrisisManagement.HrApplicationFacade.FilterCombinator.and
+                comp = VA.CrisisManagement.DbFacade.FilterCompositor.and
             };
 
+            // DB facade
+            var e2 = e.getEmployees(null).FirstOrDefault();
+            Console.WriteLine(e2.birthDate.ToShortDateString());
         }
     }
 }

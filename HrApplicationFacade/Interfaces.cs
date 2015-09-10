@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using VA.CrisisManagement.Domain;
+using VA.CrisisManagement.DbFacade;
 
 /*
  * Facade to existing HR system
@@ -14,12 +15,6 @@ using VA.CrisisManagement.Domain;
  * */
 namespace VA.CrisisManagement.HrApplicationFacade
 {
-    // Builder pattern for WHERE clause
-    public interface IFindFilter
-    {
-        string buildFilter();
-    }
-
     //TODO: review content
     public class PeopleFindFilter : IFindFilter
     {
@@ -37,21 +32,6 @@ namespace VA.CrisisManagement.HrApplicationFacade
         new public string buildFilter() { throw new NotImplementedException(); }
     }
 
-
-    public enum FilterCombinator
-    {
-        and
-        , or
-    }
-
-    public class CompoundFilter<TFilter> : IFindFilter
-    {
-        public TFilter one;
-        public TFilter two;
-        public FilterCombinator comb;
-
-        public string buildFilter() { throw new NotImplementedException(); }
-    }
 
     /// <summary>
     /// Finds Employees in HR Database

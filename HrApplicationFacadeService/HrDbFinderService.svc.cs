@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 
 using VA.CrisisManagement.Domain;
+using VA.CrisisManagement.DbFacade;
 using VA.CrisisManagement.HrApplicationFacade;
 
 namespace VA.CrisisManagement.HrApplicationFacadeService
