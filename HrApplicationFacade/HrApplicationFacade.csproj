@@ -39,14 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementation.cs" />
-    <Compile Include="Interfaces.cs" />
+    <Compile Include="HrAppImplementation.cs" />
+    <Compile Include="HrAppInterfaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DbFacade\DbFacade.csproj">
+    <ProjectReference Include="..\DbFacade\StorageAbstractionLayer.csproj">
       <Project>{c7c0d486-cae3-4cca-aadc-ef2c8e7fb915}</Project>
-      <Name>DbFacade</Name>
+      <Name>StorageAbstractionLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\DomainObjects\DomainObjects.fsproj">
       <Project>{c3453715-7588-49b4-bdab-3d67c59fe3dc}</Project>

@@ -4,36 +4,39 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+//using System.Web.Mvc;
+
+using VA.CrisisManagement.Domain;
+using VA.CrisisManagement.DbFacade;
 
 namespace BackEnd.Controllers
 {
     public class VictimsController : ApiController
     {
-        // GET api/victims
-        public IEnumerable<string> Get()
+        private static DomainObjects.Crisis dummycris = new DomainObjects.Crisis();
+        private static DomainObjects.Victim dummy = new DomainObjects.Victim();
+
+        /// <summary>
+        /// Return all victims for crisis
+        /// </summary>
+        [Route("api/{crisisId}/victims")]
+        public IEnumerable<DomainObjects.Victim> Get(string crisisId)
         {
-            return new string[] { "value1", "value2" };
+            return dummy.getVictims(crisisId);
         }
 
-        // GET api/victims/5
-        public string Get(int id)
+        /// <summary>
+        /// Return victim by id from crisis
+        /// </summary>
+        [Route("api/{crisisId}/victims/{victimId}")]
+        public DomainObjects.Victim Get(string crisisId, string victimId)
         {
-            return "value";
+            return dummy.getVictim(victimId);
         }
 
-        // POST api/victims
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/victims/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/victims/5
-        public void Delete(int id)
-        {
-        }
+        //TODO: Other operations
+        // POST api/...
+        // PUT api/...
+        // DELETE api/...
     }
 }
