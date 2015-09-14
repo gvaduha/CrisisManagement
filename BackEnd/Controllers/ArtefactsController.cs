@@ -11,49 +11,49 @@ using VA.CrisisManagement.DbFacade;
 namespace BackEnd.Controllers
 {
     /*
-     * Controller to edit Artefacts
+     * Controller to edit Artifacts
      * We don't use or check roomId on this backend site
      * */
-    public class ArtefactsController : ApiController
+    public class ArtifactsController : ApiController
     {
-        private static DomainObjects.Artefact dummy = new DomainObjects.Artefact();
+        private static DomainObjects.Artifact dummy = new DomainObjects.Artifact();
 
         /// <summary>
-        /// Return all Artefacts from room
+        /// Return all Artifacts from room
         /// </summary>
-        [Route("api/rooms/{roomId}/Artefacts/{fake:bool?}")]
-        public IEnumerable<DomainObjects.Artefact> Get(string roomId, bool fake)
+        [Route("api/rooms/{roomId}/Artifacts/{fake:bool?}")]
+        public IEnumerable<DomainObjects.Artifact> Get(string roomId, bool fake)
         {
-            return dummy.getArtefacts(roomId);
+            return dummy.getArtifacts(roomId);
         }
 
         /// <summary>
-        /// Return Artefact by id from room
+        /// Return Artifact by id from room
         /// Really we don't check the room at backend
         /// </summary>
-        [Route("api/Artefacts/{docId}")]
-        public DomainObjects.Artefact Get(string docId)
+        [Route("api/Artifacts/{docId}")]
+        public DomainObjects.Artifact Get(string docId)
         {
-            return dummy.getArtefact(docId);
+            return dummy.getArtifact(docId);
         }
 
         /// <summary>
-        /// Create new Artefact in room
+        /// Create new Artifact in room
         /// </summary>
-        [Route("api/rooms/{roomId}/Artefacts")]
+        [Route("api/rooms/{roomId}/Artifacts")]
         public void Post(string roomId, [FromBody]string value)
         {
-            //TODO: Create new Artefact and return it id
+            //TODO: Create new Artifact and return it id
         }
 
         /// <summary>
-        /// Delete Artefact by id from room
+        /// Delete Artifact by id from room
         /// Really we don't check the room at backend
         /// </summary>
-        [Route("api/Artefacts/{docId}")]
+        [Route("api/Artifacts/{docId}")]
         public void Delete(string docId)
         {
-            //TODO: delete Artefact (mark deleted)
+            //TODO: delete Artifact (mark deleted)
         }
     }
 }

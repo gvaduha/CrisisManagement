@@ -27,25 +27,25 @@ namespace VA.CrisisManagement.DbFacade
         }
 
         /// <summary>
-        /// Return Artefact by roomId
+        /// Return Artifact by roomId
         /// </summary>
-        public static IEnumerable<DomainObjects.Artefact> getArtefacts(this DomainObjects.Artefact obj, string roomId)
+        public static IEnumerable<DomainObjects.Artifact> getArtifacts(this DomainObjects.Artifact obj, string roomId)
         {
             yield return obj;
         }
 
         /// <summary>
-        /// Return Artefact by id
+        /// Return Artifact by id
         /// </summary>
-        public static DomainObjects.Artefact getArtefact(this DomainObjects.Artefact obj, string docId)
+        public static DomainObjects.Artifact getArtifact(this DomainObjects.Artifact obj, string docId)
         {
             return obj;
         }
 
         /// <summary>
-        /// Set lock flag in the DB on returned Artefact to enable exclusive edit
+        /// Set lock flag in the DB on returned Artifact to enable exclusive edit
         /// </summary>
-        public static DomainObjects.Artefact getAndLockArtefact(this DomainObjects.Artefact obj, string docId, string lockerEmploeeId)
+        public static DomainObjects.Artifact getAndLockArtifact(this DomainObjects.Artifact obj, string docId, string lockerEmploeeId)
         {
             return obj;
         }
@@ -53,7 +53,7 @@ namespace VA.CrisisManagement.DbFacade
         /// <summary>
         /// Put to DB and unlock exclusively edited doc
         /// </summary>
-        public static bool putAndUnlockArtefact(this DomainObjects.Artefact obj, string docId)
+        public static bool putAndUnlockArtifact(this DomainObjects.Artifact obj, string docId)
         {
             return true;
         }

@@ -45,8 +45,8 @@ module DomainObjects =
         member this.TreatVictims (*: Set<>*) = [Victim()]
 
 
-    /// One Artefact umbrella to all types of Artefacts and it's storage VirtualRoom
-    type Artefact() =
+    /// One Artifact umbrella to all types of Artifacts and it's storage VirtualRoom
+    type Artifact() =
         inherit Persistent()
         // Meta information section
         member this.Name = "Evacuation plan"
@@ -55,7 +55,7 @@ module DomainObjects =
     type VirtualRoom() =
         inherit Persistent()
         member this.Name = "Rescue Team"
-        member this.Artefacts (*: Set<>*) = [Artefact()]
+        member this.Artifacts (*: Set<>*) = [Artifact()]
 
 
     /// Crisis plans and tasks
@@ -71,10 +71,10 @@ module DomainObjects =
         member this.State = TaskState.Completed
         member this.AssignedEmployees (*: Set<>*) = [Employee()]
         member this.AssignedVolunteers (*: Set<>*) = [Volunteer()]
-        member this.Artefacts (*: Set<>*) = [Artefact()]
+        member this.Artifacts (*: Set<>*) = [Artifact()]
 
     type CrisisManagementPlan() =
-        inherit Artefact()
+        inherit Artifact()
         member this.Name = "Plan B"
         member this.Tasks (*: Set<>*) = [CrisisTask()]
         member this.State = TaskState.InProgress
@@ -90,7 +90,7 @@ module DomainObjects =
         member this.VirtualRooms (*: Set<>*) = [VirtualRoom()]
         member this.Victims (*: Set<>*) = [Victim()]
         member this.Volunteers (*: Set<>*) = [Volunteer()]
-        member this.Artefacts (*: Set<>*) = [Artefact()]
+        member this.Artifacts (*: Set<>*) = [Artifact()]
 
 
     /// "Root" domain object
@@ -114,7 +114,7 @@ module DomainObjects =
         member this.Body = "New urgent mail!"
 
     type MailBox() =
-        inherit Artefact()
+        inherit Artifact()
         member this.Owner = CrisisTeamMember()
         member this.Content = [MailMessage()]
 
@@ -130,7 +130,7 @@ module DomainObjects =
         member this.InstantMessages (*: Set<>*) = [InstantMessage()]
 
     type InstantChat() =
-        inherit Artefact()
+        inherit Artifact()
         member this.CrisisTeamMembers (*: Set<>*) = [CrisisTeamMember()]
         member this.Chunks (*: Set<>*) = [InstantChatChunk()]
         member this.CurrentChunk = InstantChatChunk()
